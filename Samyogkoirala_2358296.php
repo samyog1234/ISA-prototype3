@@ -23,7 +23,7 @@ $description = $data->data->weather[0]->description;
 // Check if data for the same city and date already exists
 $existingDataQuery = "SELECT * FROM weather_data_samyog WHERE city = '$city' AND DATE(date) = CURDATE()";
 $existingDataResult = $conn->query($existingDataQuery);
- 
+// Using if else statement to find if the city is saved or not
 if ($existingDataResult->num_rows > 0) {
     echo "Data for the same city and date already exists. Skipping insertion.";
 } else {
